@@ -3,7 +3,6 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const execFile = require('child_process').execFile;
 const fs = require('fs');
-const setTimeout = require('setTimeout');
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,7 +14,6 @@ express()
     const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
     await page.setViewport({ width: 600, height: 800 });
-    //setTimeout(() => {  console.log("waited 5s!"); }, 5000);
     await page.goto(process.env.SCREENSHOT_URL || 'https://darksky.net/details/40.7127,-74.0059/2021-1-6/us12/en');
     await page.screenshot({
       path: '/tmp/screenshot.png',
