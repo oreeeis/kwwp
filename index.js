@@ -3,6 +3,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const execFile = require('child_process').execFile;
 const fs = require('fs');
+const setTimeout = require('setTimeout');
 
 const PORT = process.env.PORT || 3000;
 
